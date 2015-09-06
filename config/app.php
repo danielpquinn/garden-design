@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'url' => 'http://localhost:8888',
+    'url' => 'http://localhost',
 
     /*
     |--------------------------------------------------------------------------
@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY', 'secret'),
+    'key' => env('APP_KEY', 'SomeRandomString'),
 
     'cipher' => 'AES-256-CBC',
 
@@ -146,11 +146,9 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         /*
-         * SleepingOwl Admin
+         * Frozennode Admin Providers...
          */
-        SleepingOwl\Admin\AdminServiceProvider::class,
-        Illuminate\Html\HtmlServiceProvider::class,
-
+        Frozennode\Administrator\AdministratorServiceProvider::class,
     ],
 
     /*
@@ -199,16 +197,6 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
-        'Admin'        => SleepingOwl\Admin\Admin::class,
-        'AdminAuth'    => SleepingOwl\AdminAuth\Facades\AdminAuth::class,
-        'AdminRouter'  => SleepingOwl\Admin\Facades\AdminRouter::class,
-        'AssetManager' => SleepingOwl\Admin\AssetManager\AssetManager::class,
-        'Column'       => SleepingOwl\Admin\Columns\Column::class,
-        'FormItem'     => SleepingOwl\Admin\Models\Form\FormItem::class,
-        'ModelItem'    => SleepingOwl\Admin\Models\ModelItem::class,
-
-        'Form' => Illuminate\Html\FormFacade::class,
-        'Html' => Illuminate\Html\HtmlFacade::class,
 
     ],
 

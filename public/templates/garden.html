@@ -1,0 +1,21 @@
+<div class="row gallery">
+  <div class="col-md-12 selected" fill-window-height padding="300">
+    <div class="caption" ng-show="garden.captionOpen">
+      <h3>{{garden.selected.title}}</h3>
+      <p>{{garden.selected.description}}</p>
+      <a ng-click="garden.closeCaption()" class="close">X</a>
+    </div>
+    <div class="full" style="background-image: url({{garden.selected.full}})"></div>
+  </div>
+  <div class="col-md-12">
+    <nav>
+      <a ng-repeat="image in garden.images" class="thumb" style="background-image: url({{image.thumb}})" ng-click="garden.select(image)"></a>
+    </nav>
+  </div>
+  <div class="col-md-6 garden-title">
+    <span>{{garden.title}}</span>
+  </div>
+  <div class="col-md-6 text-right garden-next">
+    <a ui-sref="default.garden({ gardenSlug: garden.nextSlug })">Next Garden >></a>
+  </div>
+</div>

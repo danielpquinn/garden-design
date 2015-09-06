@@ -1,0 +1,49 @@
+
+// Garden
+
+.gallery {
+
+  .selected {
+    position: relative;
+    margin-bottom: 10px;
+
+    .caption {
+      background-color: rgba(255, 255, 255, 0.8);
+      position: absolute;
+      top: 0;
+      left: 15px;
+      bottom: 0;
+      width: 33%;
+      padding: 40px 20px;
+
+      .close {
+        top: 10px;
+        right: 10px;
+        position: absolute;
+        display: block;
+        padding: 5px 10px;
+      }
+    }
+
+    .full {
+      background-size: 100% auto;
+      background-position: center;
+      height: 100%;
+    }
+  }
+
+  .thumb {
+    float: left;
+    margin: 0 5px;
+    display: block;
+    height: 100px;
+    width: 100px;
+    background-size: 100% auto;
+    cursor: pointer;
+  }
+
+  .garden-title,
+  .garden-next {
+    margin-top: 10px;
+  }
+}
