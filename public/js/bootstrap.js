@@ -4,6 +4,7 @@ import '../node_modules/angular-ui-router/build/angular-ui-router.min'
 
 import './directives/fill-window-height'
 import './services/debounce'
+import './services/garden'
 
 import './routes'
 

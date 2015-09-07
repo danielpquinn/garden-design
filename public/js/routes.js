@@ -5,7 +5,9 @@ import GardenController from './controllers/garden'
 import GardensController from './controllers/gardens'
 import PressController from './controllers/press'
 
-app.config(function ($stateProvider, $urlRouterProvider) {
+app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+
+  $locationProvider.html5Mode(true)
 
   $urlRouterProvider.otherwise('/')
 
@@ -22,14 +24,24 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     url: '/gardens',
     templateUrl: 'gardens.html',
     controller: GardensController,
-    controllerAs: 'gardens'
+    controllerAs: 'gardens',
+    resolve: {
+      gardens: function (gardenService) {
+        return gardenService.list()
+      }
+    }
   })
 
   $stateProvider.state('default.garden', {
-    url: '/gardens/:gardenSlug',
+    url: '/gardens/:slug',
     templateUrl: 'garden.html',
     controller: GardenController,
-    controllerAs: 'garden'
+    controllerAs: 'garden',
+    resolve: {
+      garden: function (gardenService, $stateParams) {
+        return gardenService.find($stateParams.slug)
+      }
+    }
   })
 
   $stateProvider.state('default.about', {

@@ -11,6 +11,7 @@
 |
 */
 
+// Single page app
 Route::get('/', function () {
     return view('spa');
 });
@@ -24,4 +25,6 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
-// Single page app
+//API
+Route::get('/api/gardens', 'API\GardensController@all');
+Route::get('/api/gardens/{slug}', 'API\GardensController@find');

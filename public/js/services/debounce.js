@@ -1,7 +1,7 @@
 
 import app from '../app'
 
-app.service('debounce', () => {
+app.service('debounceService', () => {
   var timeout
 
   return function (fn, delay) {

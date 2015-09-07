@@ -17,7 +17,7 @@ class CreateGardensTable extends Migration
             $table->string('name');
             $table->string('slug')->unique();
             $table->string('description');
-            $table->string('thumbnail');
+            $table->string('image');
             $table->timestamps();
         });
     }

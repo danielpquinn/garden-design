@@ -3,7 +3,7 @@ import app from '../app'
 
 // Make home page image fill the window
 
-app.directive('fillWindowHeight', function ($window, debounce) {
+app.directive('fillWindowHeight', function ($window, debounceService) {
   return {
     link: function (scope, element, attrs) {
       var $win = angular.element($window)
@@ -18,7 +18,7 @@ app.directive('fillWindowHeight', function ($window, debounce) {
       }
 
       $win.on('resize', () => {
-        debounce(resize, 500)
+        debounceService(resize, 500)
       })
 
       scope.$on('$destroy', () => {

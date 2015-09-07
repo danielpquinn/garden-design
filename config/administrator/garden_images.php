@@ -26,15 +26,23 @@ return array(
   'columns' => array(
     'name',
     'description',
-    'thumbnail',
-    'full'
+    'image'
   ),
 
   'edit_fields' => array(
     'name',
     'description',
-    'thumbnail',
-    'full',
+    'image' => array(
+        'title' => 'Image',
+        'type' => 'image',
+        'location' => public_path() . '/uploads/gardens/',
+        'naming' => 'keep',
+        'length' => 60,
+        'size_limit' => 5,
+        'sizes' => array(
+            array(200, 200, 'crop', public_path() . '/uploads/gardens/thumbnails/', 100)
+        )
+    ),
     'garden' => array(
       'type' => 'relationship',
       'title' => 'Garden',
