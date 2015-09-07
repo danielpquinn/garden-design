@@ -1,0 +1,20 @@
+
+// About
+
+.about {
+  @include fill();
+
+  div[class*="col-"] {
+    height: 100%;
+    position: relative;
+  }
+
+  .summary {
+    padding-top: 50px;
+  }
+
+  .portrait {
+    @include fill();
+    @include bg-fill();
+  }
+}

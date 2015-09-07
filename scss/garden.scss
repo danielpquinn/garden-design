@@ -1,0 +1,73 @@
+
+// Garden
+
+.row.selected {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 160px;
+  left: 0;
+
+  div[class*="col-"] {
+    @include fill();
+  }
+
+  .full {
+    @include fill();
+    @include bg-fill();
+  }
+
+  .caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 33%;
+    padding: 50px 15px 15px 15px;
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+
+  .caption-close {
+    font-size: 1.2em;
+    cursor: pointer;
+    position: absolute;
+    display: block;
+    padding: 10px 15px;
+    top: 0;
+    right: 0;
+  }
+}
+
+.row.thumbnails {
+  position: absolute;
+  right: 0;
+  bottom: 40px;
+  left: 0;
+  height: 120px;
+
+  div[class*="col-"] {
+    padding: 10px 0 10px 0;
+  }
+
+  .thumb {
+    display: block;
+    float: left;
+    margin-right: 10px;
+    width: 100px;
+    height: 100px;
+    @include bg-fill();
+    cursor: pointer;
+  }
+}
+
+.row.details {
+  position: absolute;
+  right: 0;
+  bottom: 0px;
+  left: 0;
+  height: 40px;
+
+  div[class*="col-"] {
+    padding: 10px 0 10px 0;
+  }
+}

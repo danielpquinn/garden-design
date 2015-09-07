@@ -1,10 +1,13 @@
 
-import '../node_modules/angular/angular'
-import '../node_modules/angular-ui-router/build/angular-ui-router.min'
+// Services
 
-import './directives/fill-window-height'
 import './services/debounce'
 import './services/garden'
+import './services/page'
+
+// Animations
+
+import './animations/slide-in-out'
 
 import './routes'
 

@@ -7,21 +7,21 @@ return array(
    *
    * @type string
    */
-  'title' => 'Garden Images',
+  'title' => 'Page Images',
 
   /**
    * The singular name of your model
    *
    * @type string
    */
-  'single' => 'garden image',
+  'single' => 'page image',
 
   /**
    * The class name of the Eloquent model that this config represents
    *
    * @type string
    */
-  'model' => 'App\Models\GardenImage',
+  'model' => 'App\Models\PageImage',
 
   'columns' => array(
     'name',
@@ -33,17 +33,14 @@ return array(
     'image' => array(
         'title' => 'Image',
         'type' => 'image',
-        'location' => public_path() . '/uploads/gardens/',
+        'location' => public_path() . '/uploads/pages/',
         'naming' => 'keep',
         'length' => 60,
-        'size_limit' => 5,
-        'sizes' => array(
-            array(200, 200, 'crop', public_path() . '/uploads/gardens/thumbnails/', 100)
-        )
+        'size_limit' => 5
     ),
-    'garden' => array(
+    'page' => array(
       'type' => 'relationship',
-      'title' => 'Garden',
+      'title' => 'Page',
       'name_field' => 'name'
     )
   )

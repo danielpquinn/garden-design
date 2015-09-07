@@ -1,0 +1,15 @@
+
+// Layout
+
+.router-outlet,
+.layout-container {
+  @include fill();
+}
+
+.content {
+  position: absolute;
+  top: 135px;
+  right: 30px;
+  bottom: 15px;
+  left: 30px;
+}

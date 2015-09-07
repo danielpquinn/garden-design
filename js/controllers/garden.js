@@ -4,12 +4,14 @@ export default class GardenController {
   constructor(garden) {
     this.captionOpen = true
     this.garden = garden
-    this.selected = garden.images[0]
+    this.current = 0
   }
 
-  select(image) {
-    this.captionOpen = true;
-    this.selected = image;
+  select(index) {
+    if (index === 0) {
+      this.captionOpen = true
+    }
+    this.current = index;
   }
 
   closeCaption() {

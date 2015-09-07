@@ -1,0 +1,23 @@
+
+// Mixins
+
+@mixin fill() {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@mixin bg-fill() {
+  background-position: center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+     -moz-transition: $transition;
+      -ms-transition: $transition;
+          transition: $transition;
+}

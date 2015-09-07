@@ -1,0 +1,20 @@
+
+// Contact
+
+.contact {
+  @include fill();
+
+  div[class*="col-"] {
+    height: 100%;
+    position: relative;
+  }
+
+  .portrait {
+    @include fill();
+    @include bg-fill();
+  }
+
+  .details {
+    padding-top: 50px;
+  }
+}

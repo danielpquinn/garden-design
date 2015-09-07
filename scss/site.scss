@@ -1,8 +1,9 @@
 
 // Site
 
-@import 'animations';
 @import 'typography';
+@import 'mixins';
+@import 'animations';
 @import 'layout';
 @import 'header';
 @import 'home';
@@ -15,4 +16,9 @@
 a {
   color: black;
   text-decoration: none;
+
+  &:hover {
+    color: black;
+    text-decoration: none;
+  }
 }

@@ -1,0 +1,8 @@
+.fade {
+  opacity: 1;
+  @include transition(opacity 0.3s linear);
+}
+
+.fade.ng-hide {
+  opacity:0;
+}

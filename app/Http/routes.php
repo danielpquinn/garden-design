@@ -28,3 +28,5 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 //API
 Route::get('/api/gardens', 'API\GardensController@all');
 Route::get('/api/gardens/{slug}', 'API\GardensController@find');
+
+Route::get('/api/pages/{name}', 'API\PagesController@find');

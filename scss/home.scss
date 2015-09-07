@@ -1,0 +1,16 @@
+
+// Home
+
+.home {
+  @include fill();
+
+  div[class*="col-"] {
+    height: 100%;
+    position: relative;
+  }
+
+  .feature {
+    @include fill();
+    @include bg-fill();
+  }
+}
