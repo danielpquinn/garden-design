@@ -47,7 +47,7 @@ class Handler extends ExceptionHandler
             switch ($e->getStatusCode()) {
                 // not found
                 case 404:
-                return response()->make(view('spa'));
+                return response()->make(view('home'));
 
                 break;
 

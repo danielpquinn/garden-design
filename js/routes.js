@@ -75,16 +75,16 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     url: '/press',
     controller: PressController,
     controllerAs: 'press',
-    templateUrl: 'press.html'
+    templateUrl: 'press.html',
+    resolve: {
+      pressItems: function (pressItemService) {
+        return pressItemService.list()
+      }
+    }
   })
 
   $stateProvider.state('default.contact', angular.extend({
     url: '/contact',
     templateUrl: 'contact.html'
   }, pageFinder('Contact')))
-
-  $stateProvider.state('default.houzz', {
-    url: '/houzz',
-    templateUrl: 'houzz.html'
-  })
 })

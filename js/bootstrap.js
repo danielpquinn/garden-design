@@ -1,9 +1,11 @@
 
 // Services
 
+import './services/browser'
 import './services/debounce'
 import './services/garden'
 import './services/page'
+import './services/press-item'
 
 // Animations
 

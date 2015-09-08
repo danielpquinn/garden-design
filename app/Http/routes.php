@@ -11,9 +11,16 @@
 |
 */
 
+use Illuminate\Http\Request;
+
+
 // Single page app
-Route::get('/', function () {
-    return view('spa');
+Route::get('/', function (Request $request) {
+    $ua = $request->header('User-Agent');
+
+    return view('home', array(
+      'ua' => $ua
+    ));
 });
 
 // Authentication routes...
@@ -30,3 +37,5 @@ Route::get('/api/gardens', 'API\GardensController@all');
 Route::get('/api/gardens/{slug}', 'API\GardensController@find');
 
 Route::get('/api/pages/{name}', 'API\PagesController@find');
+
+Route::get('/api/press-items', 'API\PressItemsController@all');

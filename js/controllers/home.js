@@ -1,8 +1,10 @@
 
 export default class HomeController {
 
-  constructor($scope, $interval, page) {
+  constructor($scope, $interval, browserService, page) {
     var interval = $interval(() => { this.rotate() }, 3000)
+
+    console.log(browserService)
 
     this.current = 0
     this.page = page
@@ -21,4 +23,4 @@ export default class HomeController {
   }
 }
 
-HomeController.$inject = ['$scope', '$interval', 'page']
+HomeController.$inject = ['$scope', '$interval', 'page', 'browserService']

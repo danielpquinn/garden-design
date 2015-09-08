@@ -18,7 +18,7 @@ class GardensController extends Controller {
   }
 
   /*
-   * List all gardens
+   * Find a garden by it's slug
    */
   public function find(Request $request, $slug) {
     $garden = Garden::where('slug', $slug)->firstOrFail();
