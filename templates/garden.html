@@ -9,16 +9,16 @@
 </div>
 <div class="row thumbnails">
   <div class="col-md-12">
-    <nav>
+    <nav style="width: {{garden.garden.images.length * 110}}px;">
       <a ng-repeat="image in garden.garden.images" class="thumb" style="background-image: url(/uploads/gardens/thumbnails/{{image.image}})" ng-click="garden.select($index)"></a>
     </nav>
   </div>
 </div>
 <div class="row details">
-  <div class="col-md-6 garden-title">
+  <div class="col-md-6 col-xs-6 garden-title">
     <span>{{garden.garden.name}}</span>
   </div>
-  <div class="col-md-6 text-right garden-next">
+  <div class="col-md-6 col-xs-6 text-right garden-next">
     <a ui-sref="default.garden({ gardenSlug: garden.nextSlug })">Next Garden >></a>
   </div>
 </div>

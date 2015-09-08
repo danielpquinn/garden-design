@@ -18,9 +18,7 @@ use Illuminate\Http\Request;
 Route::get('/', function (Request $request) {
     $ua = $request->header('User-Agent');
 
-    return view('home', array(
-      'ua' => $ua
-    ));
+    return view('home', array( 'ua' => $ua ));
 });
 
 // Authentication routes...

@@ -49,6 +49,12 @@
     padding: 10px 0 10px 0;
   }
 
+  .col-md-12 {
+    overflow: hidden;
+    overflow-x: scroll;
+    @include fill();
+  }
+
   .thumb {
     display: block;
     float: left;
@@ -70,4 +76,8 @@
   div[class*="col-"] {
     padding: 10px 0 10px 0;
   }
+}
+
+.mobile .row.selected .caption {
+  width: 75%;
 }

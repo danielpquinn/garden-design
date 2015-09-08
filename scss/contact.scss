@@ -18,3 +18,20 @@
     padding-top: 50px;
   }
 }
+
+.mobile {
+
+  .contact {
+
+    .details {
+      display: block;
+      margin: 0;
+      padding: 10px 15px;
+      position: absolute;
+      background-color: rgba(255, 255, 255, 0.6);
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+}

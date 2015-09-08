@@ -1,7 +1,8 @@
 
 // Services
 
-import './services/browser'
+import './providers/browser'
+
 import './services/debounce'
 import './services/garden'
 import './services/page'

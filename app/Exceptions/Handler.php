@@ -47,7 +47,8 @@ class Handler extends ExceptionHandler
             switch ($e->getStatusCode()) {
                 // not found
                 case 404:
-                return response()->make(view('home'));
+                $ua = $request->header('User-Agent');
+                return response()->make(view('home', array( 'ua' => $ua )));
 
                 break;
 

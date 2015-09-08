@@ -4,9 +4,11 @@ import app from './app'
 import HomeController from './controllers/home'
 import GardenController from './controllers/garden'
 import GardensController from './controllers/gardens'
+import LayoutController from './controllers/layout'
 import PressController from './controllers/press'
 
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+  var mobile = USER_AGENT.toLowerCase().indexOf('mobile') >= 0
 
   var pageFinder = function (name) {
     return {
@@ -27,7 +29,9 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
   $urlRouterProvider.otherwise('/')
 
   $stateProvider.state('default', {
-    templateUrl: 'layout.html'
+    controller: LayoutController,
+    controllerAs: 'layout',
+    templateUrl: mobile ? 'layout-mobile.html' : 'layout.html'
   })
 
   $stateProvider.state('default.home', {
@@ -68,7 +72,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
   $stateProvider.state('default.about', angular.extend({
     url: '/about',
-    templateUrl: 'about.html'
+    templateUrl: mobile ? 'about-mobile.html' : 'about.html'
   }, pageFinder('About')))
 
   $stateProvider.state('default.press', {
@@ -85,6 +89,6 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
   $stateProvider.state('default.contact', angular.extend({
     url: '/contact',
-    templateUrl: 'contact.html'
+    templateUrl: mobile ? 'contact-mobile.html' : 'contact.html'
   }, pageFinder('Contact')))
 })

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/dist/vendor.css">
     <link rel="stylesheet" href="/dist/site.css">
 
-    <!-- Global vars for scripts -->
+    <!-- Global script vars -->
 
     <script type="text/javascript">
       var USER_AGENT = "{{$ua}}";

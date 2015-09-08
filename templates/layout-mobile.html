@@ -1,0 +1,20 @@
+<div class="container-fluid layout-container mobile">
+  <div class="row header">
+    <div class="col-md-8 col-xs-8">
+      <a class="brand" ui-sref="default.home">Bliss Garden Design</a>
+    </div>
+    <div class="col-md-4 col-xs-4 text-right">
+      <a class="toggle" ng-click="layout.toggleMenu()" class="menu-toggle">Menu</a>
+    </div>
+    <div class="col-md-12 menu" ng-show="layout.menuOpen">
+      <nav>
+        <a ui-sref="default.gardens" ng-click="layout.toggleMenu()">Gardens</a>
+        <a ui-sref="default.about" ng-click="layout.toggleMenu()">About</a>
+        <a ui-sref="default.press" ng-click="layout.toggleMenu()">Press</a>
+        <a ui-sref="default.contact" ng-click="layout.toggleMenu()">Contact</a>
+        <a href="http://www.houzz.com/pro/blissgardendesign" target="_blank">Houzz</a>
+      </nav>
+    </div>
+  </div>
+  <ui-view class="content slide-in-out"></ui-view>
+</div>
