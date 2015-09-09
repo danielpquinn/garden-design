@@ -1,9 +1,17 @@
 
 // Layout
 
-.router-outlet,
-.layout-container {
+.router-outlet {
   @include fill();
+
+  .layout-container {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    max-height: 800px;
+  }
 }
 
 .content {

@@ -19,19 +19,25 @@
   }
 }
 
-.mobile {
+.desktop .about {
 
-  .about {
+  .line-art {
+    background-image: url('/images/about-bg.jpg');
+    background-position: 0 bottom;
+    background-repeat: no-repeat;
+  }
+}
 
-    .summary {
-      display: block;
-      margin: 0;
-      padding: 10px 15px;
-      position: absolute;
-      background-color: rgba(255, 255, 255, 0.6);
-      bottom: 0;
-      left: 0;
-      right: 0;
-    }
+.mobile .about {
+
+  .summary {
+    display: block;
+    margin: 0;
+    padding: 10px 15px;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.6);
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
 }

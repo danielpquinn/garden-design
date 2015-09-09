@@ -1,11 +1,12 @@
 
 export default class HomeController {
 
-  constructor($scope, $interval, page) {
-    var interval = $interval(() => { this.rotate() }, 3000)
+  constructor(browser, $scope, $interval, page) {
+    var interval = $interval(() => { this.rotate() }, 5000)
 
     this.current = 0
     this.page = page
+    this.imagePath = browser.mobile ? '/uploads/pages/mobile/' : '/uploads/pages/full/'
 
     $scope.$on('$destroy', () => {
       $interval.cancel(interval)
@@ -21,4 +22,4 @@ export default class HomeController {
   }
 }
 
-HomeController.$inject = ['$scope', '$interval', 'page']
+HomeController.$inject = ['browser', '$scope', '$interval', 'page']

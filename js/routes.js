@@ -59,7 +59,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
   })
 
   $stateProvider.state('default.garden', {
-    url: '/gardens/:slug',
+    url: '/gardens/:slug?next',
     templateUrl: 'garden.html',
     controller: GardenController,
     controllerAs: 'garden',

@@ -33,10 +33,14 @@ return array(
     'image' => array(
         'title' => 'Image',
         'type' => 'image',
-        'location' => public_path() . '/uploads/pages/',
+        'location' => public_path() . '/uploads/pages/original/',
         'naming' => 'keep',
         'length' => 60,
-        'size_limit' => 5
+        'size_limit' => 5,
+        'sizes' => array(
+            array(1200, 900, 'crop', public_path() . '/uploads/pages/full/', 60),
+            array(600, 450, 'crop', public_path() . '/uploads/pages/mobile/', 60)
+        )
     ),
     'page' => array(
       'type' => 'relationship',

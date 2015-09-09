@@ -19,19 +19,25 @@
   }
 }
 
-.mobile {
+.desktop .contact {
 
-  .contact {
+  .details {
+    background-image: url('/images/contact-bg.jpg');
+    background-position: 0 bottom;
+    background-repeat: no-repeat; 
+  }
+}
 
-    .details {
-      display: block;
-      margin: 0;
-      padding: 10px 15px;
-      position: absolute;
-      background-color: rgba(255, 255, 255, 0.6);
-      bottom: 0;
-      left: 0;
-      right: 0;
-    }
+.mobile .contact {
+
+  .details {
+    display: block;
+    margin: 0;
+    padding: 10px 15px;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.6);
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
 }

@@ -1,10 +1,12 @@
 
 export default class GardenController {
 
-  constructor(garden) {
+  constructor(browser, garden, $stateParams) {
     this.captionOpen = true
     this.garden = garden
     this.current = 0
+    this.next = $stateParams.next
+    this.imagePath = browser.mobile ? '/uploads/gardens/mobile/' : '/uploads/gardens/full/'
   }
 
   select(index) {
@@ -19,4 +21,4 @@ export default class GardenController {
   }
 }
 
-GardenController.$inject = ['garden']
+GardenController.$inject = ['browser', 'garden', '$stateParams']

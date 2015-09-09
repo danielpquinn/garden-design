@@ -1,6 +1,6 @@
 <div class="row selected">
   <div class="col-md-12">
-    <div class="full fade" ng-show="garden.current===$index" style="background-image: url(/uploads/gardens/{{image.image}})" ng-repeat="image in garden.garden.images"></div>
+    <div class="full fade" ng-show="garden.current===$index" style="background-image: url({{garden.imagePath}}{{image.image}})" ng-repeat="image in garden.garden.images"></div>
     <div class="caption fade" ng-show="garden.captionOpen">
       <p>{{garden.garden.description}}</p>
       <a ng-click="garden.closeCaption()" class="caption-close">X</a>
@@ -10,7 +10,7 @@
 <div class="row thumbnails">
   <div class="col-md-12">
     <nav style="width: {{garden.garden.images.length * 110}}px;">
-      <a ng-repeat="image in garden.garden.images" class="thumb" style="background-image: url(/uploads/gardens/thumbnails/{{image.image}})" ng-click="garden.select($index)"></a>
+      <a ng-repeat="image in garden.garden.images" class="thumb" style="background-image: url(/uploads/gardens/thumbnail/{{image.image}})" ng-click="garden.select($index)"></a>
     </nav>
   </div>
 </div>
@@ -19,6 +19,6 @@
     <span>{{garden.garden.name}}</span>
   </div>
   <div class="col-md-6 col-xs-6 text-right garden-next">
-    <a ui-sref="default.garden({ gardenSlug: garden.nextSlug })">Next Garden >></a>
+    <a ng-if="garden.next" ui-sref="default.garden({ slug: garden.next, next: null })">Next Garden >></a>
   </div>
 </div>

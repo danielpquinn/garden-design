@@ -4,9 +4,9 @@
       <a class="brand" ui-sref="default.home">Bliss Garden Design</a>
     </div>
     <div class="col-md-4 col-xs-4 text-right">
-      <a class="toggle" ng-click="layout.toggleMenu()" class="menu-toggle">Menu</a>
+      <a class="toggle" ng-click="layout.toggleMenu()" class="menu-toggle"><span class="fade" ng-show="!layout.menuOpen">Menu</span><span class="fade" ng-show="layout.menuOpen">X&nbsp;&nbsp;&nbsp;</span></a>
     </div>
-    <div class="col-md-12 menu" ng-show="layout.menuOpen">
+    <div class="col-md-12 menu fade" ng-show="layout.menuOpen">
       <nav>
         <a ui-sref="default.gardens" ng-click="layout.toggleMenu()">Gardens</a>
         <a ui-sref="default.about" ng-click="layout.toggleMenu()">About</a>

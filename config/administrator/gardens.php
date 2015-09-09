@@ -32,16 +32,18 @@ return array(
   'edit_fields' => array(
     'name',
     'slug',
-    'description',
+    'description' => array(
+      'type' => 'textarea'
+    ),
     'image' => array(
         'title' => 'Image',
         'type' => 'image',
-        'location' => public_path() . '/uploads/gardens/',
+        'location' => public_path() . '/uploads/gardens/original/',
         'naming' => 'keep',
         'length' => 60,
         'size_limit' => 5,
         'sizes' => array(
-            array(200, 200, 'crop', public_path() . '/uploads/gardens/thumbnails/', 100)
+            array(300, 300, 'crop', public_path() . '/uploads/gardens/thumbnail/', 100)
         )
     )
   )

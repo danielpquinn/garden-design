@@ -1,8 +1,9 @@
 <div class="row about">
   <div class="col-md-3">
-    <p class="summary">{{page.content}}</p>
+    <p class="summary" ng-bind-html="page.content"></p>
   </div>
   <div class="col-md-4">
-    <div class="portrait" style="background-image: url(/uploads/pages/{{page.images[0].image}})"></div>
+    <div class="portrait" style="background-image: url(/uploads/pages/original/{{page.images[0].image}})"></div>
   </div>
+  <div class="col-md-5 line-art"></div>
 </div>

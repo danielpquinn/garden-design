@@ -37,18 +37,25 @@
   }
 
   .toggle {
+    position: relative;
     font-size: 0.9em;
     padding: 23px 0 10px 0;
+
+    span {
+      position: absolute;
+      right: 0;
+    }
   }
 
   .menu {
     z-index: 10;
     position: absolute;
-    top: 40px;
+    top: 60px;
     left: 0;
     right: 0;
     background-color: white;
     padding: 0;
+    border-top: 1px solid #eee;
 
     a {
       display: block;

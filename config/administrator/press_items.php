@@ -34,12 +34,12 @@ return array(
     'image' => array(
         'title' => 'Image',
         'type' => 'image',
-        'location' => public_path() . '/uploads/press_items/',
+        'location' => public_path() . '/uploads/press_items/original/',
         'naming' => 'keep',
         'length' => 60,
         'size_limit' => 5,
         'sizes' => array(
-            array(200, 200, 'crop', public_path() . '/uploads/press_items/thumbnails/', 100)
+            array(300, 300, 'crop', public_path() . '/uploads/press_items/thumbnail/', 100)
         )
     ),
     'file' => array(

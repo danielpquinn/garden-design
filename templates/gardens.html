@@ -1,5 +1,5 @@
 <div class="row gardens">
   <div class="col-md-3" ng-repeat="garden in gardens.gardens">
-    <a ui-sref="default.garden({ slug: garden.slug })" class="thumb" style="background-image: url(/uploads/gardens/thumbnails/{{garden.image}})"></a>
+    <a ui-sref="default.garden({ slug: garden.slug, next: gardens.gardens[$index + 1].slug })" class="thumb" style="background-image: url(/uploads/gardens/thumbnail/{{garden.image}})"></a>
   </div>
 </div>
