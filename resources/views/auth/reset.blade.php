@@ -4,15 +4,16 @@
 <div class="container" style="margin-top: 80px;">
   <div class="col-md-4 col-md-offset-4">
     <div class="panel panel-default">
-      <div class="panel-heading">Login</div>
+      <div class="panel-heading">Reset Password</div>
       <div class="panel-body">
-        <form class="form-horizontal" method="POST" action="/auth/login">
+        <form class="form-horizontal" method="POST" action="/password/reset">
           {!! csrf_field() !!}
+          <input type="hidden" name="token" value="{{ $token }}">
 
           <div class="form-group">
-            <label class="control-label col-md-4" for="email">Email</label>
+            <label class="control-label col-md-4" for="name">Email</label>
             <div class="col-md-8">
-              <input class="form-control" type="email" name="email" value="{{ old('email') }}">
+                <input class="form-control" type="email" name="email" value="{{ old('email') }}">
             </div>
           </div>
 
@@ -24,25 +25,20 @@
           </div>
 
           <div class="form-group">
-            <div class="col-md-12 text-right">
-              <input type="checkbox" name="remember"> Remember Me
+            <label class="control-label col-md-4" for="password">Confirm Password</label>
+            <div class="col-md-8">
+              <input class="form-control" type="password" name="password_confirmation">
             </div>
           </div>
 
           <div class="form-group">
             <div class="col-md-12 text-right">
-              <button type="submit" class="btn btn-default">Login</button>
+              <button type="submit" class="btn">Reset Password</button>
             </div>
           </div>
         </form>
       </div>
     </div>
-
-    <p class="text-center">
-      <a class="btn btn-default btn-xs" href="{{ url('password/email') }}">Forgot Password?</a>
-      <a class="btn btn-default btn-xs" href="{{ url('auth/register') }}">Register</a>
-    </p>
-
   </div>
 </div>
 @stop

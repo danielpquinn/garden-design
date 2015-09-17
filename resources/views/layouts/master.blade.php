@@ -13,12 +13,6 @@
     <link rel="stylesheet" href="/dist/vendor.css">
     <link rel="stylesheet" href="/dist/site.css">
 
-    <!-- Global script vars -->
-
-    <script type="text/javascript">
-      var USER_AGENT = "{{$ua}}";
-    </script>
-
     @yield('scripts')
     @yield('styles')
   </head>
