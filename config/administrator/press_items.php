@@ -30,9 +30,11 @@ return array(
   ),
 
   'edit_fields' => array(
-    'name',
+    'name' => array(
+      'title' => 'Name'
+    ),
     'image' => array(
-        'title' => 'Image',
+        'title' => 'Image (300x300)',
         'type' => 'image',
         'location' => public_path() . '/uploads/press_items/original/',
         'naming' => 'keep',
@@ -43,7 +45,7 @@ return array(
         )
     ),
     'file' => array(
-      'title' => 'File',
+      'title' => 'File (5MB max)',
       'type' => 'file',
       'location' => public_path() . '/uploads/press_items/',
       'naming' => 'keep',

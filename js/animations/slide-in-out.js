@@ -13,14 +13,14 @@ export default app.animation('.slide-in-out', function () {
         'opacity': 1,
         'margin-left': '0px',
         'margin-right': '0px'
-      }, 600, done)
+      }, 300, done)
     },
     leave(element, done) {
       element.velocity({
         'opacity': 0,
         'margin-left': '-30px',
         'margin-right': '30px'
-      }, 600, done)
+      }, 300, done)
     }
   }
 })

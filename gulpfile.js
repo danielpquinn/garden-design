@@ -64,7 +64,7 @@ gulp.task('vendor-scripts', function () {
 // Sass
 
 gulp.task('sass', function () {
-  return gulp.src('./scss/site.scss')
+  return gulp.src([ './scss/site.scss', './scss/admin-dashboard.scss' ])
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('./public/dist'));

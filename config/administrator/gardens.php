@@ -30,13 +30,18 @@ return array(
   ),
 
   'edit_fields' => array(
-    'name',
-    'slug',
+    'name' => array(
+      'title' => 'Name'
+    ),
+    'slug' => array(
+      'title' => 'Slug (Appears in URL)'
+    ),
     'description' => array(
+      'title' => 'Description',
       'type' => 'textarea'
     ),
     'image' => array(
-        'title' => 'Image',
+        'title' => 'Thumbnail (300x300)',
         'type' => 'image',
         'location' => public_path() . '/uploads/gardens/original/',
         'naming' => 'keep',

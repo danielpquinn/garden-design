@@ -29,9 +29,11 @@ return array(
   ),
 
   'edit_fields' => array(
-    'name',
+    'name' => array(
+      'title' => 'Name'
+    ),
     'image' => array(
-        'title' => 'Image',
+        'title' => 'Image (1200x900)',
         'type' => 'image',
         'location' => public_path() . '/uploads/pages/original/',
         'naming' => 'keep',

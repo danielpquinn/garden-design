@@ -29,8 +29,11 @@ return array(
   ),
 
   'edit_fields' => array(
-    'name',
+    'name' => array(
+      'title' => 'Name'
+    ),
     'content' => array(
+      'title' => 'Content',
       'type' => 'wysiwyg'
     )
   )
