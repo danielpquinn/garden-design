@@ -1,7 +1,9 @@
 
-// Services
+// Providers
 
 import './providers/browser'
+
+// Services
 
 import './services/debounce'
 import './services/garden'
@@ -11,6 +13,10 @@ import './services/press-item'
 // Animations
 
 import './animations/slide-in-out'
+
+// Directives
+
+import './directives/center-vertical'
 
 import './routes'
 

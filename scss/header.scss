@@ -1,29 +1,34 @@
 
 // Header
 
-.desktop .header {
+.header.desktop {
   font-family: 'Julius Sans One', sans-serif;
-  padding-top: 10px;
-  padding-bottom: 20px;
-
-  h1, nav {
-    display: inline-block;
-  }
+  position: absolute;
 
   h1 {
-    margin-right: 20px;
+    margin-right: 15px;
+  }
+
+  h1, nav {
+    display: block;
+    float: left;
   }
 
   nav {
+    display: block;
+    float: left;
 
     a {
       display: inline-block;
-      padding: 10px 20px;
+
+      &.selected {
+        color: #bbb;
+      }
     }
   }
 }
 
-.mobile .header {
+.header.mobile {
   font-family: 'Julius Sans One', sans-serif;
 
   .brand,
@@ -62,6 +67,108 @@
       width: 100%;
       padding: 10px 15px;
       border-bottom: 1px solid #eee;
+    }
+  }
+}
+
+@media only screen and (min-width: $screen-xs) {
+
+  .header.mobile {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: $screen-xs) {
+
+  .header.desktop {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: $screen-xs) and (max-width: $screen-sm) {
+  
+  .header.desktop {
+    top: 0;
+    left: $screen-xs-gutter;
+    right: $screen-xs-gutter;
+
+    h1 {
+      font-size: 20px;
+    }
+
+    nav {
+      margin-top: 19px;
+
+      a {
+        font-size: 0.9em;
+        padding: 5px 3px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $screen-sm) and (max-width: $screen-md) {
+  
+  .header.desktop {
+    top: 10px;
+    left: $screen-sm-gutter;
+    right: $screen-sm-gutter;
+
+    h1 {
+      font-size: 28px;
+    }
+
+    nav {
+      margin-top: 22px;
+
+      a {
+        font-size: 1em;
+        padding: 5px 5px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $screen-md) and (max-width: $screen-lg) {
+  
+  .header.desktop {
+    top: 30px;
+    left: $screen-md-gutter;
+    right: $screen-md-gutter;
+
+    h1 {
+      font-size: 42px;
+    }
+
+    nav {
+      margin-top: 25px;
+
+      a {
+        font-size: 1.1em;
+        padding: 10px 8px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $screen-lg) {
+  
+  .header.desktop {
+    top: 30px;
+    left: $screen-lg-gutter;
+    right: $screen-lg-gutter;
+
+    h1 {
+      font-size: 42px;
+    }
+
+    nav {
+      margin-top: 25px;
+
+      a {
+        font-size: 1.1em;
+        padding: 10px 8px;
+      }
     }
   }
 }

@@ -1,9 +1,16 @@
-<div class="row about">
-  <div class="col-md-3">
-    <p class="summary" ng-bind-html="page.content"></p>
-  </div>
+<div class="row about desktop">
   <div class="col-md-4">
-    <div class="portrait" style="background-image: url(/uploads/pages/original/{{page.images[0].image}})"></div>
+    <p center-vertical class="summary" ng-bind-html="page.content"></p>
   </div>
-  <div class="col-md-5 line-art"></div>
+  <div class="col-md-4 portrait">
+    <img src="/uploads/pages/original/{{page.images[0].image}}">
+  </div>
+  <div class="col-md-4 line-art">
+    <img src="/images/about-bg.jpg">
+  </div>
+</div>
+
+<div class="about mobile">
+  <div class="portrait" style="background-image: url(/uploads/pages/original/{{page.images[0].image}});"></div>
+  <p center-vertical class="summary" ng-bind-html="page.content"></p>
 </div>

@@ -8,16 +8,15 @@ import LayoutController from './controllers/layout'
 import PressController from './controllers/press'
 
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
-  var mobile = USER_AGENT.toLowerCase().indexOf('mobile') >= 0
 
   var pageFinder = function (name) {
     return {
-      controller: function ($scope, $sce, page) {
+      controller: ($scope, $sce, page) => {
         $scope.page = page;
         $scope.page.content = $sce.trustAsHtml(page.content)
       },
       resolve: {
-        page: function (pageService) {
+        page: (pageService) => {
           return pageService.find(name)
         }
       }
@@ -31,7 +30,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
   $stateProvider.state('default', {
     controller: LayoutController,
     controllerAs: 'layout',
-    templateUrl: mobile ? 'layout-mobile.html' : 'layout.html'
+    templateUrl: 'layout.html'
   })
 
   $stateProvider.state('default.home', {
@@ -40,7 +39,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     controller: HomeController,
     controllerAs: 'home',
     resolve: {
-      page: function (pageService) {
+      page: (pageService) => {
         return pageService.find('Home')
       }
     }
@@ -52,7 +51,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     controller: GardensController,
     controllerAs: 'gardens',
     resolve: {
-      gardens: function (gardenService) {
+      gardens: (gardenService) => {
         return gardenService.list()
       }
     }
@@ -64,7 +63,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     controller: GardenController,
     controllerAs: 'garden',
     resolve: {
-      garden: function (gardenService, $stateParams) {
+      garden: (gardenService, $stateParams) => {
         return gardenService.find($stateParams.slug)
       }
     }
@@ -72,7 +71,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
   $stateProvider.state('default.about', angular.extend({
     url: '/about',
-    templateUrl: mobile ? 'about-mobile.html' : 'about.html'
+    templateUrl: 'about.html'
   }, pageFinder('About')))
 
   $stateProvider.state('default.press', {
@@ -81,7 +80,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     controllerAs: 'press',
     templateUrl: 'press.html',
     resolve: {
-      pressItems: function (pressItemService) {
+      pressItems: (pressItemService) => {
         return pressItemService.list()
       }
     }
@@ -89,6 +88,6 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
   $stateProvider.state('default.contact', angular.extend({
     url: '/contact',
-    templateUrl: mobile ? 'contact-mobile.html' : 'contact.html'
+    templateUrl: 'contact.html'
   }, pageFinder('Contact')))
 })

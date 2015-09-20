@@ -2,7 +2,7 @@
 import app from '../app'
 
 app.provider('browser', () => {
-  var mobile = (typeof USER_AGENT === 'string') ? (USER_AGENT.toLowerCase().indexOf('mobile') >= 0) : false
+  var mobile = Math.min(window.innerHeight, window.innerWidth) < 500
 
   return {
     $get: () => {

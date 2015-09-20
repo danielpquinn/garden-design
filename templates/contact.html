@@ -1,8 +1,16 @@
-<div class="row contact">
-  <div class="col-md-4">
-    <div class="portrait" style="background-image: url(/uploads/pages/original/{{page.images[0].image}})"></div>
+<div class="row contact desktop">
+  <div class="col-md-4 portrait">
+    <img src="/uploads/pages/original/{{page.images[0].image}}">
   </div>
-  <div class="col-md-3 details">
-    <p ng-bind-html="page.content"></p>
+  <div class="col-md-4 details">
+    <img src="/images/contact-bg.jpg">
+    <div class="text">
+      <p ng-bind-html="page.content"></p>
+    </div>
   </div>
+</div>
+
+<div class="contact mobile">
+  <div class="portrait" style="background-image: url(/uploads/pages/original/{{page.images[0].image}});"></div>
+  <p center-vertical class="details" ng-bind-html="page.content"></p>
 </div>

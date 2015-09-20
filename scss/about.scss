@@ -1,37 +1,56 @@
 
 // About
 
-.about {
-  @include fill();
+.about.desktop {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  padding-bottom: 80px;
 
   div[class*="col-"] {
-    height: 100%;
-    position: relative;
+    flex: 1;
   }
 
   .summary {
-    padding-top: 50px;
+    text-align: justify;
+  }
+
+  .portrait {
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .line-art {
+    position: relative;
+
+    img {
+      position: absolute;
+      left: -5px;
+      bottom: 0;
+      width: 75%;
+      height: 90%;
+    }
+  }
+}
+
+.about.mobile {
+  margin: 0;
+  @include fill();
+
+  div[class*="col-"] {
+    @include fill();
   }
 
   .portrait {
     @include fill();
     @include bg-fill();
   }
-}
-
-.desktop .about {
-
-  .line-art {
-    background-image: url('/images/about-bg.jpg');
-    background-position: 0 bottom;
-    background-repeat: no-repeat;
-  }
-}
-
-.mobile .about {
 
   .summary {
-    display: block;
+    max-height: 180px;
+    overflow: scroll;
     margin: 0;
     padding: 10px 15px;
     position: absolute;
@@ -39,5 +58,57 @@
     bottom: 0;
     left: 0;
     right: 0;
+  }
+}
+
+@media only screen and (max-width: $screen-sm) {
+
+  .about.desktop .summary {
+    max-height: 260px;
+    overflow-y: scroll;
+    padding-right: 10px;
+    font-size: 1em;
+    line-height: 1.3em;
+  }
+}
+
+@media only screen and (min-width: $screen-sm) and (max-width: $screen-md) {
+
+  .about.desktop .summary {
+    padding-right: 25px;
+    font-size: 1em;
+    line-height: 1.5em;
+  }
+}
+
+@media only screen and (min-width: $screen-md) and (max-width: $screen-lg) {
+
+  .about.desktop .summary {
+    padding-right: 25px;
+    font-size: 1.2em;
+    line-height: 1.5em;
+  }
+}
+
+@media only screen and (min-width: $screen-lg) {
+
+  .about.desktop .summary {
+    padding-right: 25px;
+    font-size: 1.3em;
+    line-height: 1.8em;
+  }
+}
+
+@media only screen and (min-width: $screen-xs) {
+
+  .about.mobile {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: $screen-xs) {
+
+  .about.desktop {
+    display: none;
   }
 }

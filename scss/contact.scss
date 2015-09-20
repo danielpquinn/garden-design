@@ -1,12 +1,49 @@
 
 // Contact
 
-.contact {
+.contact.desktop {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+
+  .portrait {
+    flex: 1;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .details {
+    flex: 2;
+    margin-left: -5px;
+    font-size: 1.1em;
+    line-height: 1.8em;
+    overflow-y: scroll;
+
+    .text {
+      width: 300px;
+      position: absolute;
+      top: 24%;
+      left: 18%;
+    }
+
+    img {
+      position: absolute;
+      left: -5px;
+      bottom: 0;
+      width: 28%;
+      height: 78%;
+    }
+  }
+}
+
+.contact.mobile {
+  margin: 0;
   @include fill();
 
   div[class*="col-"] {
-    height: 100%;
-    position: relative;
+    @include fill();
   }
 
   .portrait {
@@ -15,23 +52,8 @@
   }
 
   .details {
-    padding-top: 50px;
-  }
-}
-
-.desktop .contact {
-
-  .details {
-    background-image: url('/images/contact-bg.jpg');
-    background-position: 0 bottom;
-    background-repeat: no-repeat; 
-  }
-}
-
-.mobile .contact {
-
-  .details {
-    display: block;
+    max-height: 180px;
+    overflow: scroll;
     margin: 0;
     padding: 10px 15px;
     position: absolute;
@@ -39,5 +61,19 @@
     bottom: 0;
     left: 0;
     right: 0;
+  }
+}
+
+@media only screen and (min-width: $screen-xs) {
+
+  .contact.mobile {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: $screen-xs) {
+
+  .contact.desktop {
+    display: none;
   }
 }

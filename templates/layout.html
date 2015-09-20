@@ -1,12 +1,29 @@
-<div class="container-fluid layout-container desktop">
-  <div class="row header">
+<div class="container-fluid layout-container">
+  <div class="row header desktop">
     <div class="col-md-12">
       <h1><a ui-sref="default.home">Bliss Garden Design</a></h1>
       <nav>
-        <a ui-sref="default.gardens">Gardens</a>
-        <a ui-sref="default.about">About</a>
-        <a ui-sref="default.press">Press</a>
-        <a ui-sref="default.contact">Contact</a>
+        <a ui-sref="default.gardens" ng-class="{ 'selected': layout.state.current.name==='default.gardens' || layout.state.current.name==='default.garden' }">Gardens</a>
+        <a ui-sref="default.about" ng-class="{ 'selected': layout.state.current.name==='default.about' }">About</a>
+        <a ui-sref="default.press" ng-class="{ 'selected': layout.state.current.name==='default.press' }">Press</a>
+        <a ui-sref="default.contact" ng-class="{ 'selected': layout.state.current.name==='default.contact' }">Contact</a>
+        <a href="http://www.houzz.com/pro/blissgardendesign" target="_blank">Houzz</a>
+      </nav>
+    </div>
+  </div>
+  <div class="row header mobile">
+    <div class="col-md-8 col-xs-8">
+      <a class="brand" ui-sref="default.home">Bliss Garden Design</a>
+    </div>
+    <div class="col-md-4 col-xs-4 text-right">
+      <a class="toggle" ng-click="layout.toggleMenu()" class="menu-toggle"><span class="fade" ng-show="!layout.menuOpen">Menu</span><span class="fade" ng-show="layout.menuOpen">X&nbsp;&nbsp;&nbsp;</span></a>
+    </div>
+    <div class="col-md-12 menu fade" ng-show="layout.menuOpen">
+      <nav>
+        <a ui-sref="default.gardens" ng-click="layout.toggleMenu()">Gardens</a>
+        <a ui-sref="default.about" ng-click="layout.toggleMenu()">About</a>
+        <a ui-sref="default.press" ng-click="layout.toggleMenu()">Press</a>
+        <a ui-sref="default.contact" ng-click="layout.toggleMenu()">Contact</a>
         <a href="http://www.houzz.com/pro/blissgardendesign" target="_blank">Houzz</a>
       </nav>
     </div>
