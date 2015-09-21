@@ -11,7 +11,7 @@
   <div class="thumbs">
     <div class="thumb-container">
       <nav style="width: {{garden.garden.images.length * 110}}px;">
-        <a ng-repeat="image in garden.garden.images track by $index" class="thumb" style="background-image: url(/uploads/gardens/thumbnail/{{image.image}})" ng-click="garden.select($index)"></a>
+        <a ng-repeat="image in garden.garden.images track by $index" class="thumb" style="background-image: url(/uploads/gardens/thumbnail/{{image.thumbnail}})" ng-click="garden.select($index)"></a>
       </nav>
     </div>
   </div>

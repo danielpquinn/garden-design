@@ -25,7 +25,8 @@ return array(
 
   'columns' => array(
     'name',
-    'image'
+    'image',
+    'thumbnail'
   ),
 
   'edit_fields' => array(
@@ -33,16 +34,26 @@ return array(
       'title' => 'Name'
     ),
     'image' => array(
-        'title' => 'Image (1200x900)',
+        'title' => 'Image (1920x1100)',
         'type' => 'image',
         'location' => public_path() . '/uploads/gardens/original/',
         'naming' => 'keep',
         'length' => 60,
         'size_limit' => 5,
         'sizes' => array(
-            array(300, 300, 'crop', public_path() . '/uploads/gardens/thumbnail/', 60),
-            array(1200, 900, 'crop', public_path() . '/uploads/gardens/full/', 60),
+            array(1920, 1100, 'crop', public_path() . '/uploads/gardens/full/', 60),
             array(600, 450, 'crop', public_path() . '/uploads/gardens/mobile/', 60)
+        )
+    ),
+    'thumbnail' => array(
+        'title' => 'Thumbnail (300x300)',
+        'type' => 'image',
+        'location' => public_path() . '/uploads/gardens/original/',
+        'naming' => 'keep',
+        'length' => 60,
+        'size_limit' => 5,
+        'sizes' => array(
+            array(300, 300, 'crop', public_path() . '/uploads/gardens/thumbnail/', 60)
         )
     ),
     'garden' => array(

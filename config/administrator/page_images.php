@@ -40,7 +40,7 @@ return array(
         'length' => 60,
         'size_limit' => 5,
         'sizes' => array(
-            array(1200, 900, 'crop', public_path() . '/uploads/pages/full/', 60),
+            array(1920, 1100, 'crop', public_path() . '/uploads/pages/full/', 60),
             array(600, 450, 'crop', public_path() . '/uploads/pages/mobile/', 60)
         )
     ),

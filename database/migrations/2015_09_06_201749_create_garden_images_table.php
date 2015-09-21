@@ -16,6 +16,7 @@ class CreateGardenImagesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('image');
+            $table->string('thumbnail');
             $table->integer('garden_id')->unsigned();
             $table->timestamps();
         });
