@@ -52,3 +52,11 @@
     display: none;
   }
 }
+
+@media only screen and (min-width: $screen-sm) {
+
+  .summary {
+    font-size: 1.2em;
+    text-align: justify;
+  }
+}
