@@ -4,4 +4,10 @@
       <img src="/uploads/press_items/thumbnail/{{item.image}}">
     </a>
   </div>
+  <div class="col-md-12"></div>
+  <div class="col-md-3 col-xs-4" ng-repeat="item in press.pressLinks">
+    <a target="_blank" href="{{item.link}}" class="thumb">
+      <img src="/uploads/press_links/thumbnail/{{item.logo}}">
+    </a>
+  </div>
 </div>

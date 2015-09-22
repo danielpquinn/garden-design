@@ -2,12 +2,13 @@
 // Contact
 
 .contact.desktop {
-  display: flex;
-  flex: 1;
-  flex-direction: row;
+  @include flexbox();
+  @include flex(1);
+  @include flex-direction(row);
+  max-width: $screen-sm;
 
   .portrait {
-    flex: 1;
+    @include flex(1);
 
     img {
       width: 100%;
@@ -15,7 +16,7 @@
   }
 
   .details {
-    flex: 2;
+    @include flex(2);
     margin-left: -5px;
     font-size: 1.1em;
     line-height: 1.8em;
@@ -57,14 +58,14 @@
     margin: 0;
     padding: 10px 15px;
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.8);
     bottom: 0;
     left: 0;
     right: 0;
   }
 }
 
-@media only screen and (min-width: $screen-xs) {
+@media only screen and (min-width: $screen-xs + 1) {
 
   .contact.mobile {
     display: none;

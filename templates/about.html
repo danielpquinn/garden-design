@@ -1,13 +1,13 @@
 <div class="row about desktop">
-  <div class="col-md-4">
-    <p center-vertical class="summary" ng-bind-html="page.content"></p>
-  </div>
-  <div class="col-md-4 portrait">
+  <div class="col-md-4 col-xs-4">
     <img src="/uploads/pages/original/{{page.images[0].image}}">
   </div>
-  <div class="col-md-4 line-art">
-    <img src="/images/about-bg.jpg">
+  <div class="col-md-6 col-xs-8">
+    <div class="summary">
+      <p ng-bind-html="page.content"></p>
+    </div>
   </div>
+  <div class="col-md-4"></div>
 </div>
 
 <div class="about mobile">

@@ -26,9 +26,37 @@ return array(
   'columns' => array(
     'name',
     'slug',
-    'description'
+    'description',
+    'order'
   ),
-
+  'actions' => array(
+    'order_up' => array(
+      'title' => 'Order Up',
+      'messages' => array(
+        'active' => 'Reordering...',
+        'success' => 'Reordered',
+        'error' => 'There was an error while reordering'
+      ),
+      'action' => function ($model) {
+        return $model->orderUp();
+      }
+    ),
+    'order_down' => array(
+      'title' => 'Order Down',
+      'messages' => array(
+        'active' => 'Reordering...',
+        'success' => 'Reordered',
+        'error' => 'There was an error while reordering'
+      ),
+      'action' => function ($model) {
+        return $model->orderDown();
+      }
+    )
+  ),
+  'sort' => array(
+      'field' => 'order',
+      'direction' => 'asc',
+  ),
   'edit_fields' => array(
     'name' => array(
       'title' => 'Name'

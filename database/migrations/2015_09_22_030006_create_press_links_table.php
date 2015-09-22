@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePageImagesTable extends Migration
+class CreatePressLinksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,11 @@ class CreatePageImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('page_images', function (Blueprint $table) {
+        Schema::create('press_links', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->int('order');
-            $table->string('image');
-            $table->integer('page_id')->unsigned();
+            $table->string('logo');
+            $table->text('link');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreatePageImagesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('page_images');
+        Schema::drop('press_links');
     }
 }

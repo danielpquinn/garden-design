@@ -71,7 +71,7 @@
   }
 }
 
-@media only screen and (min-width: $screen-xs) {
+@media only screen and (min-width: $screen-xs + 1) {
 
   .header.mobile {
     display: none;

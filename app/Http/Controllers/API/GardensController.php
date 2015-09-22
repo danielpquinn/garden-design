@@ -12,7 +12,7 @@ class GardensController extends Controller {
    * List all gardens
    */
   public function all() {
-    $gardens = Garden::all();
+    $gardens = Garden::orderBy('order')->get();
 
     return $gardens;
   }
@@ -23,7 +23,7 @@ class GardensController extends Controller {
   public function find(Request $request, $slug) {
     $garden = Garden::where('slug', $slug)->firstOrFail();
 
-    $garden['images'] = $garden->images;
+    $garden['images'] = $garden->images()->orderBy('order')->get();
 
     return $garden;
   }

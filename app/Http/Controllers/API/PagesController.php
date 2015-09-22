@@ -14,7 +14,7 @@ class PagesController extends Controller {
   public function find(Request $request, $name) {
     $page = Page::where('name', $name)->firstOrFail();
 
-    $page['images'] = $page->images;
+    $page['images'] = $page->images()->orderBy('order')->get();
 
     return $page;
   }

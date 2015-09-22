@@ -45,3 +45,5 @@ Route::get('/api/gardens/{slug}', 'API\GardensController@find');
 Route::get('/api/pages/{name}', 'API\PagesController@find');
 
 Route::get('/api/press-items', 'API\PressItemsController@all');
+
+Route::get('/api/press-links', 'API\PressLinksController@all');

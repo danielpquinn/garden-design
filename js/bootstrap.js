@@ -9,6 +9,7 @@ import './services/debounce'
 import './services/garden'
 import './services/page'
 import './services/press-item'
+import './services/press-link'
 
 // Animations
 

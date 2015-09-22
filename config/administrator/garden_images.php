@@ -26,9 +26,37 @@ return array(
   'columns' => array(
     'name',
     'image',
-    'thumbnail'
+    'thumbnail',
+    'order'
   ),
-
+  'actions' => array(
+    'order_up' => array(
+      'title' => 'Order Up',
+      'messages' => array(
+        'active' => 'Reordering...',
+        'success' => 'Reordered',
+        'error' => 'There was an error while reordering'
+      ),
+      'action' => function ($model) {
+        return $model->orderUp();
+      }
+    ),
+    'order_down' => array(
+      'title' => 'Order Down',
+      'messages' => array(
+        'active' => 'Reordering...',
+        'success' => 'Reordered',
+        'error' => 'There was an error while reordering'
+      ),
+      'action' => function ($model) {
+        return $model->orderDown();
+      }
+    )
+  ),
+  'sort' => array(
+      'field' => 'order',
+      'direction' => 'asc',
+  ),
   'edit_fields' => array(
     'name' => array(
       'title' => 'Name'
@@ -41,8 +69,8 @@ return array(
         'length' => 60,
         'size_limit' => 5,
         'sizes' => array(
-            array(1920, 1100, 'crop', public_path() . '/uploads/gardens/full/', 60),
-            array(600, 450, 'crop', public_path() . '/uploads/gardens/mobile/', 60)
+            array(1920, 1100, 'crop', public_path() . '/uploads/gardens/full/', 100),
+            array(600, 450, 'crop', public_path() . '/uploads/gardens/mobile/', 100)
         )
     ),
     'thumbnail' => array(
@@ -53,7 +81,7 @@ return array(
         'length' => 60,
         'size_limit' => 5,
         'sizes' => array(
-            array(300, 300, 'crop', public_path() . '/uploads/gardens/thumbnail/', 60)
+            array(300, 300, 'crop', public_path() . '/uploads/gardens/thumbnail/', 100)
         )
     ),
     'garden' => array(

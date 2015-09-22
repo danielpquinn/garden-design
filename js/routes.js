@@ -82,6 +82,9 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     resolve: {
       pressItems: (pressItemService) => {
         return pressItemService.list()
+      }, 
+      pressLinks: (pressLinkService) => {
+        return pressLinkService.list()
       }
     }
   })

@@ -2,36 +2,14 @@
 // About
 
 .about.desktop {
-  display: flex;
-  flex: 1;
-  flex-direction: row;
-  padding-bottom: 80px;
+  max-width: $screen-sm;
 
-  div[class*="col-"] {
-    flex: 1;
+  img {
+    width: 100%;
   }
 
   .summary {
-    text-align: justify;
-  }
-
-  .portrait {
-
-    img {
-      width: 100%;
-    }
-  }
-
-  .line-art {
-    position: relative;
-
-    img {
-      position: absolute;
-      left: -5px;
-      bottom: 0;
-      width: 75%;
-      height: 90%;
-    }
+    padding: 0 20px;
   }
 }
 
@@ -54,52 +32,14 @@
     margin: 0;
     padding: 10px 15px;
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.8);
     bottom: 0;
     left: 0;
     right: 0;
   }
 }
 
-@media only screen and (max-width: $screen-sm) {
-
-  .about.desktop .summary {
-    max-height: 260px;
-    overflow-y: scroll;
-    padding-right: 10px;
-    font-size: 1em;
-    line-height: 1.3em;
-  }
-}
-
-@media only screen and (min-width: $screen-sm) and (max-width: $screen-md) {
-
-  .about.desktop .summary {
-    padding-right: 25px;
-    font-size: 1em;
-    line-height: 1.5em;
-  }
-}
-
-@media only screen and (min-width: $screen-md) and (max-width: $screen-lg) {
-
-  .about.desktop .summary {
-    padding-right: 25px;
-    font-size: 1.2em;
-    line-height: 1.5em;
-  }
-}
-
-@media only screen and (min-width: $screen-lg) {
-
-  .about.desktop .summary {
-    padding-right: 25px;
-    font-size: 1.3em;
-    line-height: 1.8em;
-  }
-}
-
-@media only screen and (min-width: $screen-xs) {
+@media only screen and (min-width: $screen-xs + 1) {
 
   .about.mobile {
     display: none;

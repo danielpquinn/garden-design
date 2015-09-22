@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6d8e29de5acef09128503a1a226f8467",
+    "hash": "292f6b98792c91d79e7b03493da41ebe",
     "packages": [
         {
             "name": "ckeditor/ckeditor",
@@ -756,20 +756,23 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.12",
+            "version": "1.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "7323424a9d39c24e597ed3f2144419dfbb52e086"
+                "reference": "76caed01a57527599b55919f0746104f288b3d56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/7323424a9d39c24e597ed3f2144419dfbb52e086",
-                "reference": "7323424a9d39c24e597ed3f2144419dfbb52e086",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/76caed01a57527599b55919f0746104f288b3d56",
+                "reference": "76caed01a57527599b55919f0746104f288b3d56",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.4.0"
+            },
+            "conflict": {
+                "league/flysystem-sftp": "<1.0.6"
             },
             "require-dev": {
                 "ext-fileinfo": "*",
@@ -833,7 +836,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2015-09-05 12:06:41"
+            "time": "2015-09-20 13:05:34"
         },
         {
             "name": "monolog/monolog",
@@ -1004,16 +1007,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v1.4.0",
+            "version": "v1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "196f177cfefa0f1f7166c0a05d8255889be12418"
+                "reference": "f78af2c9c86107aa1a34cd1dbb5bbe9eeb0d9f51"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/196f177cfefa0f1f7166c0a05d8255889be12418",
-                "reference": "196f177cfefa0f1f7166c0a05d8255889be12418",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/f78af2c9c86107aa1a34cd1dbb5bbe9eeb0d9f51",
+                "reference": "f78af2c9c86107aa1a34cd1dbb5bbe9eeb0d9f51",
                 "shasum": ""
             },
             "require": {
@@ -1045,7 +1048,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2015-07-14 17:31:05"
+            "time": "2015-09-19 14:15:08"
         },
         {
             "name": "psr/http-message",
@@ -2222,6 +2225,61 @@
             "time": "2015-04-02 19:54:00"
         },
         {
+            "name": "php-console/php-console",
+            "version": "3.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/barbushin/php-console.git",
+                "reference": "b40e988dcd7686128a47010161ba13e32d5fdb45"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/barbushin/php-console/zipball/b40e988dcd7686128a47010161ba13e32d5fdb45",
+                "reference": "b40e988dcd7686128a47010161ba13e32d5fdb45",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "suggest": {
+                "php-console/laravel-service-provider": "*",
+                "php-console/silex-service-provider": "*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "PhpConsole": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD 3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sergey Barbushin",
+                    "email": "barbushin@gmail.com",
+                    "homepage": "http://linkedin.com/in/barbushin"
+                }
+            ],
+            "description": "Server side PHP library for Google Chrome extension \"PHP Console\".",
+            "homepage": "https://github.com/barbushin/php-console",
+            "keywords": [
+                "chrome",
+                "debug",
+                "error handler",
+                "errors",
+                "google chrome",
+                "php"
+            ],
+            "time": "2015-06-30 07:52:47"
+        },
+        {
             "name": "phpdocumentor/reflection-docblock",
             "version": "2.0.4",
             "source": {
@@ -2683,16 +2741,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.7",
+            "version": "4.8.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "dab2ada9e9a503d2ec3c32fe0fb59dea9bdd9dfa"
+                "reference": "73fad41adb5b7bc3a494bb930d90648df1d5e74b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/dab2ada9e9a503d2ec3c32fe0fb59dea9bdd9dfa",
-                "reference": "dab2ada9e9a503d2ec3c32fe0fb59dea9bdd9dfa",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/73fad41adb5b7bc3a494bb930d90648df1d5e74b",
+                "reference": "73fad41adb5b7bc3a494bb930d90648df1d5e74b",
                 "shasum": ""
             },
             "require": {
@@ -2751,7 +2809,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-09-14 06:57:22"
+            "time": "2015-09-20 12:56:44"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
