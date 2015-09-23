@@ -22,7 +22,11 @@
 
   .full {
     @include fill();
-    @include bg-fill();
+
+    img {
+      max-height: 100%;
+      max-width: 100%;
+    }
   }
 
   .caption {
@@ -30,7 +34,7 @@
     top: 0;
     left: 0;
     bottom: 0;
-    padding: 50px 15px 15px 15px;
+    padding: 50px 25px 15px 15px;
     overflow-y: scroll;
     background-color: rgba(255, 255, 255, 0.8);
   }
@@ -41,7 +45,7 @@
     display: block;
     padding: 8px 12px;
     top: 0;
-    right: 0;
+    margin-left: -40px;
   }
 }
 
@@ -129,11 +133,19 @@
   .caption {
     width: 66%;
   }
+
+  .caption-close {
+    left: 66%;
+  }
 }
 
 @media only screen and (min-width: $screen-md) {
 
   .caption {
     width: 33%;
+  }
+
+  .caption-close {
+    left: 33%;
   }
 }
