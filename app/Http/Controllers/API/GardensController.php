@@ -23,6 +23,7 @@ class GardensController extends Controller {
   public function find(Request $request, $slug) {
     $garden = Garden::where('slug', $slug)->firstOrFail();
 
+    $garden['next'] = Garden::where('order', $garden->order + 1)->first();
     $garden['images'] = $garden->images()->orderBy('order')->get();
 
     return $garden;

@@ -20,7 +20,7 @@
       <a href="#" ng-click="garden.openCaption()"><span class="arrow-up"></span> {{garden.garden.name}}</a>
     </div>
     <div class="col-md-6 col-sm-2 col-xs-2 text-right garden-next">
-      <a ng-if="garden.next" ui-sref="default.garden({ slug: garden.next, next: null })"><span class="next-label">Next Garden</span> <span class="arrow-right"></span></a>
+      <a ng-if="garden.garden.next" ui-sref="default.garden({ slug: garden.garden.next.slug })"><span class="next-label">Next Garden</span> <span class="arrow-right"></span></a>
     </div>
   </div>
 </div>
