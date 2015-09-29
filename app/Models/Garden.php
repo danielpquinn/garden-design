@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Log;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
@@ -117,5 +118,16 @@ class Garden extends Model {
         });
 
         return true;
+    }
+
+    /**
+     * If this is a new record, trigger order up on save
+     */
+    
+    public function save(array $options = array()) {
+        parent::save($options);
+        if (!$this->exists) {
+            $this->orderUp();
+        }
     }
 }

@@ -66,7 +66,7 @@ return array(
     ),
     'description' => array(
       'title' => 'Description',
-      'type' => 'textarea'
+      'type' => 'wysiwyg'
     ),
     'image' => array(
         'title' => 'Thumbnail (300x300)',

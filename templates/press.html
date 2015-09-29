@@ -1,13 +1,13 @@
 <div class="row press">
   <div class="col-md-3 col-xs-4" ng-repeat="item in press.pressItems">
     <a target="_blank" href="/uploads/press_items/{{item.file}}" class="thumb">
-      <img src="/uploads/press_items/thumbnail/{{item.image}}">
+      <img ng-src="/uploads/press_items/thumbnail/{{item.image}}">
     </a>
   </div>
   <div class="col-md-12 col-xs-12"></div>
   <div class="col-md-3 col-xs-4" ng-repeat="item in press.pressLinks">
     <a target="_blank" href="{{item.link}}" class="thumb">
-      <img src="/uploads/press_links/thumbnail/{{item.logo}}">
+      <img ng-src="/uploads/press_links/thumbnail/{{item.logo}}">
     </a>
   </div>
 </div>

@@ -2,44 +2,19 @@
 // Contact
 
 .contact.desktop {
-  @include flexbox();
-  @include flex(1);
-  @include flex-direction(row);
   max-width: $screen-sm;
 
-  .portrait {
-    @include flex(1);
-
-    img {
-      width: 100%;
-    }
+  img {
+    width: 100%;
   }
 
   .details {
-    @include flex(2);
-    margin-left: -5px;
-    font-size: 1.1em;
-    line-height: 1.8em;
-    overflow-y: scroll;
-
-    .text {
-      width: 300px;
-      position: absolute;
-      top: 24%;
-      left: 18%;
-    }
-
-    img {
-      position: absolute;
-      left: -5px;
-      bottom: 0;
-      width: 28%;
-      height: 78%;
-    }
+    padding: 0 20px;
   }
 }
 
 .contact.mobile {
+  min-height: 400px;
   margin: 0;
   @include fill();
 
@@ -76,5 +51,13 @@
 
   .contact.desktop {
     display: none;
+  }
+}
+
+@media only screen and (min-width: $screen-sm) {
+
+  .details {
+    font-size: 1.2em;
+    text-align: justify;
   }
 }
