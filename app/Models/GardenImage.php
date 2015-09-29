@@ -126,13 +126,14 @@ class GardenImage extends Model {
     }
 
     /**
-     * If this is a new record, trigger order up on save
+     * If this is a new record, Make it the last in line
      */
     
     public function save(array $options = array()) {
-        parent::save($options);
-        if (!$this->exists) {
-            $this->orderUp();
+        if ($this->exists == 0) {
+            $last = Garden::orderBy('order', 'desc')->first();
+            if (isset($first)) { $this->order = $last->order + 1; }
         }
+        parent::save($options);
     }
 }
