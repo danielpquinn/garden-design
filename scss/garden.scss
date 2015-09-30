@@ -21,10 +21,9 @@
   }
 
   .full {
-    @include fill();
-    @include bg-fill();
-    background-size: cover;
-    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
   .caption {
@@ -45,6 +44,7 @@
     display: block;
     padding: 8px 12px;
     top: 10px;
+    right: 20px;
     margin-left: -40px;
   }
 }
@@ -114,6 +114,7 @@
     height: 12px;
     background-image: url('/images/grid.png');
     background-size: 100%;
+    opacity: 0.4;
   }
 
   .arrow-right {
@@ -143,10 +144,6 @@
     width: 66%;
     padding: 50px 30px 15px 20px;
   }
-
-  .caption-close {
-    left: 66%;
-  }
 }
 
 @media only screen and (min-width: $screen-md) {
@@ -154,9 +151,5 @@
   .caption {
     width: 33%;
     padding: 50px 60px 15px 40px;
-  }
-
-  .caption-close {
-    left: 33%;
   }
 }
