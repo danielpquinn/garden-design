@@ -3,9 +3,9 @@
 
 .garden-container {
   position: relative;
+  min-height: 300px;
   width: 100%;
   height: 100%;
-  min-height: 500px;
 }
 
 .row.selected {
@@ -21,9 +21,13 @@
   }
 
   .full {
-    position: absolute;
-    top: 0;
-    left: 0;
+    overflow: hidden;
+    @include fill();
+    @include bg-fill();
+
+    img {
+      height: 100%;
+    }
   }
 
   .caption {
@@ -53,9 +57,7 @@
   position: absolute;
   margin: 0;
   right: 0;
-  bottom: 40px;
   left: 0;
-  height: 120px;
   overflow: hidden;
 
   .thumb-container {
@@ -66,8 +68,6 @@
     display: block;
     float: left;
     margin-right: 10px;
-    width: 100px;
-    height: 100px;
     @include bg-fill();
     cursor: pointer;
   }
@@ -88,14 +88,8 @@
   right: 0;
   bottom: 0px;
   left: 0;
-  height: 40px;
   font-size: 1.1em;
   text-transform: uppercase;
-
-  div[class*="col-"] {
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
 
   .arrow-up {
     display: inline-block;
@@ -133,23 +127,75 @@
 
 @media only screen and (max-width: $screen-sm) {
 
+  .full img {
+    display: none;
+  }
+
   .next-label {
     display: none;
   }
-}
 
-@media only screen and (max-width: $screen-md) {
+  .garden-container {
 
-  .caption {
-    width: 66%;
-    padding: 50px 30px 15px 20px;
+    .row.selected {
+      bottom: 110px;
+    }
+
+    .caption {
+      width: 66%;
+      padding: 50px 30px 15px 20px;
+    }
+
+    .thumbs {
+      height: 90px;
+      bottom: 20px;
+
+      .thumb {
+        width: 70px;
+        height: 70px;
+      }
+    }
+
+    .row.details {
+      height: 20px;
+    }
   }
 }
 
-@media only screen and (min-width: $screen-md) {
+@media only screen and (min-width: $screen-sm) {
 
-  .caption {
-    width: 33%;
-    padding: 50px 60px 15px 40px;
+  .full {
+    background-image: none !important;
+  }
+
+  .garden-container {
+
+    .row.selected {
+      bottom: 160px;
+    }
+
+    .caption {
+      width: 33%;
+      padding: 50px 60px 15px 40px;
+    }
+
+    .thumbs {
+      height: 120px;
+      bottom: 40px;
+
+      .thumb {
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    .row.details {
+      height: 40px;
+
+      div[class*="col-"] {
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+    }
   }
 }

@@ -14,7 +14,11 @@
 
 .content {
   position: absolute;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
 }
+
+.content::-webkit-scrollbar { width: 0 !important }
 
 @media only screen and (min-width: $screen-lg) {
 

@@ -17,7 +17,6 @@ import './animations/slide-in-out'
 
 // Directives
 
-import './directives/gallery-image'
 import './directives/center-vertical'
 
 import './routes'

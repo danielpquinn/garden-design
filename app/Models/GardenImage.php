@@ -94,8 +94,6 @@ class GardenImage extends Model {
 
         // Find current $index
 
-        Log::info($images->count());
-
         for ($i = 0; $i < $images->count(); ++$i) {
             if ($images[$i]->id == $this->id) {
                 $currentIndex = $i;
