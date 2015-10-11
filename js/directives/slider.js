@@ -12,6 +12,7 @@ app.directive('slider', ($window, $timeout) => {
     },
     link(scope, element, attr) {
       let resizeTimeout
+      let dragging = false
       let $w = angular.element($window)
       let $el = angular.element(element)
       let $wrapper = $el.find('.slider-wrapper')
@@ -27,6 +28,8 @@ app.directive('slider', ($window, $timeout) => {
       }
 
       let moveToSlide = (index) => {
+        console.log('moving to ', index)
+        delete scope.wrapperClass
         if (index < 0 || index > scope.images.length - 1) { return }
         scope.currentSlide = index
         scope.offset = index * scope.slideWidth * -1
@@ -42,12 +45,16 @@ app.directive('slider', ($window, $timeout) => {
       }
 
       scope.startDrag = (e) => {
+
+        console.log('dragging')
+        if (dragging) { return }
+
+        dragging = true
+
         let lastX = 0
         let dir = 1
         let startOffset = scope.offset
         let startX = getX(e)
-
-        $wrapper.addClass('dragging')
 
         let drag = (e) => {
           let eX = getX(e)
@@ -55,6 +62,7 @@ app.directive('slider', ($window, $timeout) => {
           let maxOffset = 0
 
           scope.$apply(() => {
+            scope.wrapperClass = 'dragging'
             scope.offset = startOffset + (eX - startX)
 
             if (scope.offset < minOffset) { scope.offset = minOffset }
@@ -66,17 +74,20 @@ app.directive('slider', ($window, $timeout) => {
           lastX = eX
         }
 
-        $w.on('mousemove touchmove', drag)
-        $w.on('mouseup touchend', () => {
-          $wrapper.removeClass('dragging')
+        let stop = () => {
           scope.$apply(() => {
+            dragging = false
             moveToSlide(scope.currentSlide + dir)
           })
           $w.off('mousemove touchmove', drag)
-        })
+          $w.off('touchend', stop)
+        }
+
+        $w.on('touchmove', drag)
+        $w.on('touchend', stop)
       }
 
-      $el.on('touchstart', (e) => { scope.startDrag(e) })
+      $el.on('touchstart', scope.startDrag)
 
       $w.on('resize', () => {
         $timeout.cancel(resizeTimeout)

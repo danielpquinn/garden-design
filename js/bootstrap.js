@@ -20,6 +20,12 @@ import './animations/slide-in-out'
 import './directives/center-vertical'
 import './directives/slider'
 
+// Config
+
+import './config'
+
+// Routes
+
 import './routes'
 
 document.addEventListener('DOMContentLoaded', () => {
