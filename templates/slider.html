@@ -2,6 +2,7 @@
   <div class="slider-wrapper" style="width: {{wrapperWidth}}px; margin-left: {{offset}}px">
     <div
       ng-mousedown="startDrag($event)"
+      ng-touchstart="startDrag($event)"
       class="slider-image"
       ng-repeat="image in images"
       style="width: {{slideWidth}}px; background-image: url('{{image.image}}');">
