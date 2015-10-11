@@ -127,6 +127,10 @@
 
 @media only screen and (max-width: $screen-sm) {
 
+  .gallery-desktop {
+    display: none;
+  }
+
   .full img {
     display: none;
   }
@@ -163,6 +167,10 @@
 }
 
 @media only screen and (min-width: $screen-sm) {
+
+  .gallery-mobile {
+    display: none;
+  }
 
   .full {
     background-image: none !important;

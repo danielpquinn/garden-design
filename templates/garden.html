@@ -1,15 +1,25 @@
 <div class="garden-container">
-  <div class="row selected">
+
+  <div class="row selected gallery-desktop">
     <div class="col-md-12">
       <div class="full fade" ng-show="garden.current===$index" ng-repeat="image in garden.garden.images track by $index" style="background-image: url({{garden.imagePath}}{{image.image}})">
         <img ng-src="{{garden.imagePath}}{{image.image}}">
-        <div class="caption fade" ng-show="garden.captionOpen">
-          <p>{{garden.garden.description}}</p>
-          <a ng-click="garden.closeCaption()" class="caption-close fade" ng-show="garden.captionOpen">X</a>
-        </div>
       </div>
     </div>
+    <div class="caption fade" ng-show="garden.captionOpen">
+      <p>{{garden.garden.description}}</p>
+      <a ng-click="garden.closeCaption()" class="caption-close fade" ng-show="garden.captionOpen">X</a>
+    </div>
   </div>
+
+  <div class="row selected gallery-mobile">
+    <slider images="garden.images"></slider>
+    <div class="caption fade" ng-show="garden.captionOpen">
+      <p>{{garden.garden.description}}</p>
+      <a ng-click="garden.closeCaption()" class="caption-close fade" ng-show="garden.captionOpen">X</a>
+    </div>
+  </div>
+
   <div class="thumbs">
     <div class="thumb-container">
       <nav style="width: {{garden.garden.images.length * 110}}px;">
@@ -17,6 +27,7 @@
       </nav>
     </div>
   </div>
+
   <div class="row details">
     <div class="col-md-6 col-sm-10 col-xs-9 garden-title">
       <a href="#" ng-click="garden.openCaption()"><span class="arrow-up"></span> {{garden.garden.name}}</a>
