@@ -1,22 +1,22 @@
 {
   "private": true,
   "dependencies": {
-    "angular": "^1.4.5",
-    "angular-animate": "^1.4.5",
-    "angular-ui-router": "^0.2.15",
-    "bootstrap": "^3.3.5",
-    "jquery": "^2.1.4",
-    "velocity-animate": "^1.2.2"
+    "angular": "1.4.5",
+    "angular-animate": "1.4.5",
+    "angular-ui-router": "0.2.15",
+    "bootstrap": "3.3.5",
+    "jquery": "2.1.4",
+    "velocity-animate": "1.2.2"
   },
   "devDependencies": {
-    "babelify": "^6.3.0",
-    "browserify": "^11.0.1",
-    "gulp": "^3.9.0",
-    "gulp-angular-templatecache": "^1.7.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-sass": "^2.0.4",
-    "gulp-sourcemaps": "^1.5.2",
-    "gulp-watch": "^4.3.5",
-    "vinyl-source-stream": "^1.1.0"
+    "babelify": "6.3.0",
+    "browserify": "11.0.1",
+    "gulp": "3.9.0",
+    "gulp-angular-templatecache": "1.7.0",
+    "gulp-concat": "2.6.0",
+    "gulp-sass": "2.0.4",
+    "gulp-sourcemaps": "1.5.2",
+    "gulp-watch": "4.3.5",
+    "vinyl-source-stream": "1.1.0"
   }
 }
