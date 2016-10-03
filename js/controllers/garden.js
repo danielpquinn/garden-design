@@ -1,10 +1,11 @@
 
 export default class GardenController {
 
-  constructor(browser, garden, $scope) {
+  constructor($sce, browser, garden, $scope) {
     this.imagePath = browser.mobile ? '/uploads/gardens/mobile/' : '/uploads/gardens/full/'
     this.captionOpen = false
     this.garden = garden
+    this.trustedDescription = $sce.trustAsHtml(garden.description)
     this.current = 0
     this.$scope = $scope
 
@@ -30,4 +31,4 @@ export default class GardenController {
   }
 }
 
-GardenController.$inject = ['browser', 'garden', '$scope' ]
+GardenController.$inject = ['$sce', 'browser', 'garden', '$scope' ]

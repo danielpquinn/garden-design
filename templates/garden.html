@@ -7,7 +7,7 @@
       </div>
     </div>
     <div class="caption fade" ng-show="garden.captionOpen">
-      <p>{{garden.garden.description}}</p>
+      <p ng-bind-html="garden.trustedDescription"></p>
       <a ng-click="garden.closeCaption()" class="caption-close fade" ng-show="garden.captionOpen">X</a>
     </div>
   </div>
@@ -15,7 +15,7 @@
   <div class="row selected gallery-mobile">
     <slider images="garden.images"></slider>
     <div class="caption fade" ng-show="garden.captionOpen">
-      <p>{{garden.garden.description}}</p>
+      <p ng-bind-html="garden.trustedDescription"></p>
       <a ng-click="garden.closeCaption()" class="caption-close fade" ng-show="garden.captionOpen">X</a>
     </div>
   </div>
