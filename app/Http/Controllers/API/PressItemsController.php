@@ -12,7 +12,7 @@ class PressItemsController extends Controller {
    * List all press items
    */
   public function all() {
-    $pressItems = PressItem::all();
+    $pressItems = PressItem::orderBy('order')->get();
 
     return $pressItems;
   }
