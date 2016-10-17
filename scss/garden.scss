@@ -54,6 +54,7 @@
 }
 
 .thumbs {
+  overflow-x: scroll;
   position: absolute;
   margin: 0;
   right: 0;
@@ -70,15 +71,6 @@
     margin-right: 10px;
     @include bg-fill();
     cursor: pointer;
-  }
-}
-
-// Add a scrollbar for smaller screens
-
-@media only screen and (max-width: 1130px) {
-
-  .thumbs {
-    overflow-x: scroll;
   }
 }
 
